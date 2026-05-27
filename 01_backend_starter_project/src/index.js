@@ -242,12 +242,27 @@ const persons = [
     }
   }
 ]
-//   https methos
+//   https methods
 // callback fn => (req,res)=> {}
-app.get("/",(reqest,response)=> {
-    response.send(persons)
+// app.get("/",(reqest,response)=> {
+//     response.send(persons)
+// })
+
+
+app.get("/users",(req,res)=> {
+    res.send(persons)
+})
+// dynamic routing
+app.get("/users/:id",(req,res)=> {
+  console.log(req.params)
+  const {id} = req.params 
+  // const id = req.params.id
+  const user = persons.find((person) => person.id === Number(id))
+  res.send(user)
 })
 
+
+  
 
 app.get("/blog",(req,res)=> {
     res.send("this is an about page")
@@ -257,7 +272,17 @@ app.get("/blog",(req,res)=> {
  app.listen(3000,()=> {
     console.log(`app is running on port : 3000`);
  })
+            
+// http methods => get, post, put, delete, patch
+// get => read data 
+// post => create data => register form 
+// put => update data => big data => replace entire resource
+// delete => delete data => delete user
+// patch => update data => small data => update user name
 
 
-  
+// middlewares 
+
+
+
 
