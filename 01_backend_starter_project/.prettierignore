@@ -1,0 +1,41 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+**/*.html
+
+**/.git
+.env
+**/.svn
+**/.hg
+**/node_modules
+
+
+
+# Agent and tool generated files
+AGENTS.md
+*/AGENTS.md
+**/AGENTS.md
+
+# Ignore any agent-related files
+.agents/
+agents/
+*agents*
+*agent*
+
+# Common IDE and OS files
+.DS_Store
+Thumbs.db
+.env
+*.log
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+.coverage
