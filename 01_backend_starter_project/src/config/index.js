@@ -10,6 +10,8 @@ loadEnv()
 
 export const serverConfig = {
     port:process.env.PORT,
-    corsOrigin:process.env.CORS_ORIGIN
+    corsOrigin:process.env.CORS_ORIGIN,
+    mongodbUri:process.env.MONGODB_URI,
+    dbName:process.env.DB_NAME
 }
     
