@@ -1,15 +1,11 @@
 import { Router } from "express";
-import User from "../../schemas/user.schema.js";
-import { ApiResponse } from "../../utilities/response.js";
-import StatusCodes from "http-status-codes";
+import { registerUser } from "../../handlers/user.handler.js";
+import { validateRequestBody } from "../../middlewares/zod.middleware.js";
+import { userRegisterValidator } from "../../validation/user.validator.js";
 
-export const userRouter = Router()
+export const userRoutes = Router()
 
-userRouter.post("/register", async (req,res)=> {
-     await User.create(req.body)
-     return res.json(new ApiResponse(StatusCodes.CREATED,req.body,"user registered successfully"))
-})
+userRoutes.post("/register",validateRequestBody(userRegisterValidator),registerUser)
 
 
-
-
+// post (route, middleware, controller)
