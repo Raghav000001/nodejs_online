@@ -5,7 +5,8 @@ export const asyncLocalStore = new AsyncLocalStorage()
 
 export function getCoRelationID () {
       const asyncStore = asyncLocalStore.getStore()
-      return asyncStore?.coRelationID || "error in getting coRelationID"
+       console.log("async store :",asyncStore)
+       return asyncStore?.coRelationID || "error in getting coRelationID"
 }
 
 

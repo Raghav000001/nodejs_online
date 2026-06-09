@@ -10,7 +10,7 @@ import {logger} from "../config/logger.config.js"
 }
 
 export const getUsers = async (req,res) => {
-    logger.info("got the users")
+    logger.info("got the users",{coRelationId:req.headers["co-relation-id"]})
    const users = await User.find({})
    return res.json(new ApiResponse(StatusCodes.OK,users,"users fetched successfully"))  
 }
