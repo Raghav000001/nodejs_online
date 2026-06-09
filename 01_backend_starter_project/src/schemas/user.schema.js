@@ -10,4 +10,4 @@ const User = mongoose.model('User',userSchema)
 export default User
 
 
-// register => url
+// schemas => login, register, change passs , reset passs, profile update. 

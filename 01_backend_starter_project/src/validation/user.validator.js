@@ -15,3 +15,4 @@ export const loginUserValidator = z.object({
 
 // {req.body,schema fields}
 // req.body => zod -- parse(req.body) -- parsed req.body => req object
+// express validator, zod
