@@ -1,17 +1,18 @@
 import winston from "winston"
 import DailyRotateFile from "winston-daily-rotate-file"
+import { getCoRelationID } from "../utilities/asyncLocalStorage.js"
 
 export const logger = winston.createLogger({
     // format , transporter
     format: winston.format.combine(
            winston.format.timestamp({format:'YYYY-MM-DD HH:mm:ss'}),
            winston.format.json(),
-           winston.format.colorize(), 
-           winston.format.printf(({level,message,timestamp,...data})=> {
+           winston.format.printf(({timestamp,level,message,coRelationId,...data})=> {
                const output = {
+                     timestamp,
                      level,
                      message,
-                     timestamp,
+                     coRelationId:getCoRelationID(),
                      ...data
                }
                return JSON.stringify(output)
