@@ -19,4 +19,3 @@ See the README in the `01_backend_starter_project` folder for detailed steps.
 ## How to Use
 
 Each numbered folder represents a lesson in the series. Students can clone this repository and explore each lesson's code.
-
