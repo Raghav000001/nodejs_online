@@ -9,5 +9,4 @@ module.exports = {
             dialect: dbConfig.dialect,
             port: dbConfig.port,
        }
-  }
-  
+  } 
