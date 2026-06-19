@@ -2,6 +2,8 @@ import { createHotelService,getHotelByidService } from "../services/hotel.servic
 
 
 export const createHotelController = async (req,res) => {
+      console.log(req.body);
+      
       const {name,address,city,state,zip,country,phone,email} = req.body
       const hotel = await createHotelService({name,address,city,state,zip,country,phone,email})
       return res.status(201).json(hotel)

@@ -8,6 +8,7 @@ AGENTS.md
 agents/
 *agents*
 *agent*
+.sisphus/
 
 # Common IDE and OS files
 .DS_Store

@@ -15,6 +15,7 @@ class Hotel extends Model {
     email;
     createdAt;
     updatedAt;
+    deletedAt;
 }
 
 Hotel.init({
@@ -62,11 +63,16 @@ Hotel.init({
     updatedAt:{
         type:DataTypes.DATE,
         allowNull:false
+    },
+    deletedAt:{
+        type:DataTypes.DATE,
+        allowNull:true
     }
 },{
     sequelize,
     tableName:"hotels",
-    timestamps:true
+    timestamps:true,
+    paranoid:true
 })
 
 export default Hotel
