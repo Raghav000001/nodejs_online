@@ -27,6 +27,14 @@ import Hotel from "../db/models/hotel.modal.js";
     return hotels
   }
 
+  export async function updateHotelImage(id, imageUrl) {
+    const hotel = await Hotel.findByPk(id)
+    if (!hotel) return null
+    hotel.imageUrl = imageUrl
+    await hotel.save()
+    return hotel
+  }
+
   export async function deleteHotel(id) {
      const hotel = await Hotel.findByPk(id)
      await hotel.destroy()

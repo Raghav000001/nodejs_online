@@ -13,6 +13,7 @@ class Hotel extends Model {
     country;
     phone;
     email;
+    imageUrl;
     createdAt;
     updatedAt;
     deletedAt;
@@ -63,6 +64,10 @@ Hotel.init({
     updatedAt:{
         type:DataTypes.DATE,
         allowNull:false
+    },
+    imageUrl:{
+        type:DataTypes.STRING,
+        allowNull:true
     },
     deletedAt:{
         type:DataTypes.DATE,
