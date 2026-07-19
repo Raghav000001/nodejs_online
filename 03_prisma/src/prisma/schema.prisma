@@ -12,12 +12,23 @@ datasource db {
   provider = "mysql"
 }
 
-
-// models
 model Booking {
-    id Int @id @default(autoincrement())
+    // name  type  config
+    id   Int  @id @default(autoincrement())
     userId Int
-    hotelId Int 
+    hotelId Int
+    totalGuests Int
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+    status  BookingStatus  @default(PENDING)
 }
+
+
+enum BookingStatus {
+    PENDING
+    CONFIRMED
+    CANCELLED
+}
+
+
+
