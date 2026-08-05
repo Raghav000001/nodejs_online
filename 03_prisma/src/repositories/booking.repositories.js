@@ -1,18 +1,35 @@
-
-
 import { prismaClient } from "../config/prisma-client.config.js";
 
 
-async function createBooking(bookingData) {
-    const booking = await prismaClient.booking.create({bookingData})
-    return booking
-}
+// create booking
 
-async function getBookingById(id) {
-    const booking = await prismaClient.booking.findUnique({
-        where: {id}
-    })
-    return booking
-}
+
+// create idempotency key
+
+
+
+// get booking by id
+
+
+
+// get idempotencykey by id
+
+
+
+// confirm booking
+
+
+
+// cancel booking 
+
+
+
+
+// finalize idempotency key
+
+
+
+
+
 
 
