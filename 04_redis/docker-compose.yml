@@ -1,0 +1,15 @@
+name: redis-setup-online
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis-online-setup-server
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]  
+    volumes:
+      - redis_data:/data
+    
+volumes:
+  redis_data:
+

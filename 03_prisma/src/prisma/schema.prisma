@@ -24,7 +24,6 @@ model Booking {
     idempotencykey IdempotencyKey?
 }
 
-
 model IdempotencyKey {
     id Int @id @default(autoincrement())
     key String @unique  //uuid
